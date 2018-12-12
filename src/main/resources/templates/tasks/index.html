@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>タスク一覧</title>
+</head>
+<body>
+<ul th:unless="${tasks.isEmpty()}">
+    <li th:each="task: ${tasks}">
+        <span th:unless="${task.done}" th:text="${task.content}"></span>
+        <s th:if="${task.done}" th:text="${task.content}"></s>
+    </li>
+</ul>
+</body>
+</html>
